@@ -23,7 +23,7 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (motor.RotateToward(waypoints[currentWaypoint].position, )
+        if (motor.RotateTorward(waypoints[currentWaypoint].position, data.rotateSpeed))
         {
             // Nothing
         }
@@ -31,7 +31,7 @@ public class AIController : MonoBehaviour
         {
             motor.move(1.0f);
         }
-        if (Vector3.SqrMagnitude(transform.position, waypoints[currentWaypoint].position - transform.position) <= (closeEnough * closeEnough))
+        if (Vector3.SqrMagnitude(waypoints[currentWaypoint].position - transform.position) <= (closeEnough * closeEnough))
         {
             if (currentWaypoint < waypoints.Length - 1)
             {

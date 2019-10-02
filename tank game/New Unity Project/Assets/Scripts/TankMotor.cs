@@ -6,7 +6,7 @@ using UnityEngine;
 public class TankMotor : MonoBehaviour
 {
     public TankData data;
-    private CharacterController CharacterController;
+    public CharacterController CharacterController;
     public float MoveSpeed = 5.0f;
     public float RotateSpeed = 10.0f;
     public Transform tf;
@@ -15,6 +15,7 @@ public class TankMotor : MonoBehaviour
     {
         CharacterController = gameObject.GetComponent<CharacterController>();
         tf = gameObject.GetComponent<Transform>();
+        data = gameObject.GetComponent<TankData>();
     }
 
  
@@ -26,5 +27,9 @@ public class TankMotor : MonoBehaviour
     public void Rotate(float speed)
     {
         Vector3 rotateVector = tf.up * speed * Time.deltaTime;
+    }
+    public bool RotateTorward(Vector3 target, float rotateSpeed)
+    {
+        return true;
     }
 }
