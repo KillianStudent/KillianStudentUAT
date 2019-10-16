@@ -7,8 +7,6 @@ public class TankMotor : MonoBehaviour
 {
     public TankData data;
     public CharacterController CharacterController;
-    public float MoveSpeed = 5.0f;
-    public float RotateSpeed = 10.0f;
     public Transform tf;
 
     void start()
@@ -26,7 +24,7 @@ public class TankMotor : MonoBehaviour
     }
     public void Rotate(float speed)
     {
-        Vector3 rotateVector = tf.up * speed * Time.deltaTime;
+        tf.Rotate(Vector3.up * speed * Time.deltaTime);
     }
     public bool RotateTorward(Vector3 target, float rotateSpeed)
     {

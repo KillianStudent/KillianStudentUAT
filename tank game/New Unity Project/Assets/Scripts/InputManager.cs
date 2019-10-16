@@ -12,8 +12,8 @@ public class InputManager : MonoBehaviour
 
     private void Start()
     {
-        motor = GetComponent<TankMotor>();
-        data = GetComponent<TankData>();
+        motor = gameObject.GetComponent<TankMotor>();
+        data = gameObject.GetComponent<TankData>();
     }
 
 
@@ -47,7 +47,7 @@ public class InputManager : MonoBehaviour
                 }
                 if (Input.GetKey(KeyCode.DownArrow))
                 {
-                    motor.move(-data.moveSpeed);
+                    motor.move(-data.reverseSpeed);
                 }
                 if (Input.GetKey(KeyCode.RightArrow))
                 {
