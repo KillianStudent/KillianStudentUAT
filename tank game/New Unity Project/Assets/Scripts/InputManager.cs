@@ -17,39 +17,22 @@ public class InputManager : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    //    void Update()
-    //    {
-    //        float horizontalInput;
-    //        float verticalInput;
-    //        switch (input)
-    //        {
-    //            case InputScheme.arrowKey:  // for inputting with arrow keys
-    //                horizontalInput = Input.GetAxis("HorizontalArrows");
-    //                verticalInput = Input.GetAxis("VerticalArrows");
-    //                break;
-    //            case InputScheme.WASD:  // for inputting with WASD
-    //                horizontalInput = Input.GetAxis("horizontal WASD");
-    //               verticalInput = Input.GetAxis("vertical WASD");
-    //               break;
-    //        }
-    //  }
+
     void Update()
     {
 
-        switch (input)
+        switch (input)  // Movement
         {
             case InputScheme.arrowKey:
                 if (Input.GetKey(KeyCode.UpArrow))
                 {
                     motor.move(data.moveSpeed);
-                    Debug.Log("UpPressed");
                 }
                 if (Input.GetKey(KeyCode.DownArrow))
                 {
                     motor.move(-data.reverseSpeed);
                 }
-                if (Input.GetKey(KeyCode.RightArrow))
+                if (Input.GetKey(KeyCode.RightArrow))   // Rotation
                 {
                     motor.Rotate(data.rotateSpeed);
                 }

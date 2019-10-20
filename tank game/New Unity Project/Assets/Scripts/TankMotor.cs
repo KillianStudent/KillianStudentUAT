@@ -17,12 +17,12 @@ public class TankMotor : MonoBehaviour
     }
 
  
-    public void move(float speed)
+    public void move(float speed)   // Moves tank forward
     {
         Vector3 MoveVector = tf.forward * speed * Time.deltaTime;
-        CharacterController.SimpleMove(MoveVector);
+        CharacterController.SimpleMove(MoveVector); // Simple move
     }
-    public void Rotate(float speed)
+    public void Rotate(float speed) // Rotate
     {
         tf.Rotate(Vector3.up * speed * Time.deltaTime);
     }
