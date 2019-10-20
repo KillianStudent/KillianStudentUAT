@@ -116,7 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3bb2440dedd3e0479c33ef4321690db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 2
+  Health: 20
+  Score: 0
   moveSpeed: 200
   reverseSpeed: 100
   rotateSpeed: 180

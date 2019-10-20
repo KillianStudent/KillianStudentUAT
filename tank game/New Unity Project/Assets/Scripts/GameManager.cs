@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public List<GameObject> enemies = new List<GameObject>();
-    public double PlayerScore = 0;
+    public static int PlayerScore = 0;
+    public int Score;
 
     void Awake() // called when the game starts
     {
