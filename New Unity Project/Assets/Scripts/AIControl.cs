@@ -21,6 +21,9 @@ public class AIControl : MonoBehaviour
     public TankMotor motor;
     public Transform tf;
 
+    public float FOVAngle = 45;
+    public float FOVDistance = 10;
+
     private float exitTime;
 
     void start()
@@ -53,17 +56,25 @@ public class AIControl : MonoBehaviour
         stateEnterTime = Time.time;
     }
 
-    void OnCOllisionEnter(Collision collision)
+    public bool CanSee()
     {
-        if (collision.gameObject.tag == "Player")
+        Vector3 TargetDirection = Target.position - transform.position;
+        float angle = Vector3.Angle(TargetDirection, transform.forward);
+
+        if (angle < FOVAngle)
         {
-            ChangeState(AIState.Chase);
+            Debug.Log("CanSeePlayer");
+            return true;
         }
+
+        return false;
     }
+
 
     // Update is called once per frame
     void Update()
     {
+        CanSee();
             if (aiState == AIState.Chase)
         {
             //perform behaviours
