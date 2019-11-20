@@ -63,6 +63,8 @@ public class AIControl : MonoBehaviour
 
         if (angle < FOVAngle)
         {
+            RaycastHit hit;
+            Physics.Raycast(transform.position, Target.position, out hit, FOVDistance);
             Debug.Log("CanSeePlayer");
             return true;
         }
@@ -236,7 +238,7 @@ public class AIControl : MonoBehaviour
     }
     bool CanMove(float speed)
     {
-        // Cast a ray forward in teh distance we sent in
+        // Cast a ray forward in the distance we sent in
         // if the Raycast hits something
         RaycastHit wallhit;
         if (Physics.Raycast(tf.position, tf.forward, out wallhit, WallStop))
