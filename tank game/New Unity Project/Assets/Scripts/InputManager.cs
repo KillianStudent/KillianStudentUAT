@@ -20,8 +20,11 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-
-        switch (input)  // Movement
+        if (Input.GetKeyDown("space"))
+        {
+            gameObject.GetComponent<BulletShoot>().shoot(); // shoots bullet
+        }
+            switch (input)  // Movement
         {
             case InputScheme.arrowKey:
                 if (Input.GetKey(KeyCode.UpArrow))

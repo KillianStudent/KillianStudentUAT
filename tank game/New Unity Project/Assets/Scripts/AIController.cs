@@ -8,10 +8,18 @@ public class AIController : MonoBehaviour
 {
     public Transform[] waypoints;
     public float closeEnough = 1.0f;
-
+    public enum LoopType { Stop, Loop, PingPong }
+    public LoopType looptype;
     private int currentWaypoint = 0;
-    private TankMotor motor;
-    private TankData data;
+    public TankMotor motor;
+    public TankData data;
+    private bool isPatrolForward = true;
+    private Transform tf;
+
+    public void Awake()
+    {
+        tf = gameObject.GetComponent<Transform>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,19 +31,69 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (motor.RotateTorward(waypoints[currentWaypoint].position, data.rotateSpeed))
+        if (motor.RotateTowards(waypoints[currentWaypoint].position, data.rotateSpeed))
         {
-            // Nothing
+            // Do nothing!
         }
         else
         {
-            motor.move(1.0f);
+            // move forward
+            motor.move(data.moveSpeed);
         }
-        if (Vector3.SqrMagnitude(waypoints[currentWaypoint].position - transform.position) <= (closeEnough * closeEnough))
+
+        // If we're close enough to the waypoint
+        if (Vector3.SqrMagnitude(waypoints[currentWaypoint].position - tf.position) < (closeEnough * closeEnough))
         {
-            if (currentWaypoint < waypoints.Length - 1)
+            if (looptype == LoopType.Stop)
             {
-                currentWaypoint++;
+                // Advance to the next waypoint, if we are still in range
+                if (currentWaypoint < waypoints.Length - 1)
+                {
+                    currentWaypoint++;
+                }
+            }
+            else if (looptype == LoopType.Loop)
+            {
+                //Advance to the next waypint
+                if (currentWaypoint < waypoints.Length - 1)
+                {
+                    currentWaypoint++;
+                }
+                else
+                {
+                    currentWaypoint = 0;
+                }
+            }
+            else if (looptype == LoopType.PingPong)
+            {
+                if (isPatrolForward)
+                {
+                    // Advance to the next waypoint, if we are still in range
+                    if (currentWaypoint < waypoints.Length - 1)
+                    {
+                        currentWaypoint++;
+                    }
+                    else
+                    {
+                        //Otherwise reverse direction and decrement our current waypoint
+                        isPatrolForward = false;
+                        currentWaypoint--;
+                    }
+                }
+                else
+                {
+                    //advance to next waypoint
+                    if (currentWaypoint > 0)
+                    {
+                        currentWaypoint--;
+                    }
+                    else
+                    {
+                        //otherwise reverse direction
+                        isPatrolForward = true;
+                        currentWaypoint++;
+                    }
+                }
             }
         }
     }

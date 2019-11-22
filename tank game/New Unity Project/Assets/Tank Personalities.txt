@@ -1,0 +1,9 @@
+Chase: chases player down until next to player, and waits next to them
+ChaseAndFire: chases player down while firing bullets, does not stop
+CheckForFlee, checks where the enemy tank is in relation to the player after running by a wall for some time
+Flee: runs in the opposite direction of the player
+Rest: runs away, then returns to chasing player once health is full
+Patrol: roams around a defined area of waypoints until the player is near
+StopFire: when the player is in the field of view of a patrolling enemy, the enemy rotates torward the player and fires
+StopRotate: like the previous, but only rotates torward the player
+WaitToFlee, for fleeing tanks to keep their distance instead of chasing the player after running away
