@@ -9,7 +9,7 @@ public class TankMotor : MonoBehaviour
     public CharacterController CharacterController;
     public Transform tf;
 
-    void start()
+    void Start()
     {
         CharacterController = gameObject.GetComponent<CharacterController>();
         tf = gameObject.GetComponent<Transform>();

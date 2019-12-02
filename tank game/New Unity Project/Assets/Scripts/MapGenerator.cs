@@ -1,80 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using Random = UnityEngine.Random;
 
-public class GameManager : MonoBehaviour
+public class MapGenerator : MonoBehaviour
 {
-    public static GameManager instance;
-    public List<GameObject> enemies = new List<GameObject>();
-    public static int PlayerScore = 0;
-    public int Score;
-
-    // board creation variabls
     public int rows;
     public int cols;
     private float roomWidth = 50.0f;
     private float roomHeight = 50.0f;
     public GameObject[] gridPrefabs;
-    public int mapSeed;
-
-    private int RoomCount;
-
-    public Vector3 []PlayerSpawns = new Vector3[50];            ///////////////////////////////
-  
-    public bool DailyMap = false;
 
     private Room[,] grid;
 
 
 
-
-    void Awake() // called when the game starts
-    {
-        if (instance == null)   // if there is no Game Manager, creates one
-        {
-            instance = this;
-        }
-        else
-        {
-            Debug.LogError("ERROR: There can only be one GameMnanager");
-            Destroy(gameObject);
-        }
-    }
-
-    void Start()
-    {
-        GenerateGrid();
-    }
-
-    void Update()
-    {
-        
-    }
-
-
-    public int DateToInt(DateTime dateToUse)
-    {
-        // add the date and return it
-        return dateToUse.Year + dateToUse.Month + dateToUse.Day + dateToUse.Hour + dateToUse.Minute + dateToUse.Second + dateToUse.Millisecond;
-    }
-
-    public int mapOfTheDay(DateTime dateToUse)
-    {
-        return dateToUse.Year + dateToUse.Month + dateToUse.Day;
-    }
-
     public void GenerateGrid()
     {
-        if (DailyMap)
-        {
-            mapSeed = mapOfTheDay(DateTime.Now.Date);
-        }
-        else
-        {
-            mapSeed = DateToInt(DateTime.Now.Date);
-        }
         grid = new Room[cols, rows];
         for (int i = 0; i < rows; i++)
         {
@@ -144,4 +85,3 @@ public class GameManager : MonoBehaviour
         return gridPrefabs[Random.Range(0, gridPrefabs.Length)];
     }
 }
-

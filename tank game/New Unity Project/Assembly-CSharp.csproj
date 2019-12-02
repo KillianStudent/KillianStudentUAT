@@ -55,16 +55,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Prefabs\RoomTileTemplate\Scripts\Room.cs" />
      <Compile Include="Assets\Scripts\AIControl.cs" />
-     <Compile Include="Assets\Scripts\AIController.cs" />
-     <Compile Include="Assets\Scripts\AIController2.cs" />
-     <Compile Include="Assets\Scripts\AIController3.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\BulletShoot.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
+     <Compile Include="Assets\Scripts\MapGenerator.cs" />
+     <Compile Include="Assets\Scripts\Pickup.cs" />
+     <Compile Include="Assets\Scripts\Powerup.cs" />
+     <Compile Include="Assets\Scripts\PowerupController.cs" />
      <Compile Include="Assets\Scripts\TankData.cs" />
      <Compile Include="Assets\Scripts\TankMotor.cs" />
+     <None Include="Assets\Tank Personalities.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/User/Desktop/Github repositories/tank game/New Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

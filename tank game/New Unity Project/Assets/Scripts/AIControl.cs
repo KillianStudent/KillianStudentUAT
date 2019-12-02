@@ -31,9 +31,8 @@ public class AIControl : MonoBehaviour
 
     private float exitTime;
 
-    void start()    // this doesn't get called for some reason?
+    void Start()    // this doesn't get called for some reason?
     {
-        Debug.Log("started");
         motor = gameObject.GetComponent<TankMotor>();
         data = gameObject.GetComponent<TankData>();
         tf = gameObject.GetComponent<Transform>();

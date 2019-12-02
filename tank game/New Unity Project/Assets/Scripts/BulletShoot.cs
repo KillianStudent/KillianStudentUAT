@@ -12,7 +12,7 @@ public class BulletShoot : MonoBehaviour
     public float Bullet_forward_force;
     public float Bullet_Despawn_timer = 3.0f;
     public bool shotFired = false;
-    public float FireDelay = 0.5f;
+    public float FireDelay;
 
     IEnumerator waiter()    // Waits for some time before the bullet can be fired again
     {
@@ -20,8 +20,9 @@ public class BulletShoot : MonoBehaviour
         shotFired = false;
     }
 
-    void start()
+    void Start()
     {
+        FireDelay = gameObject.GetComponent<TankData>().fireRate;
         Bullet_Shooter = this.gameObject;
     }
 
