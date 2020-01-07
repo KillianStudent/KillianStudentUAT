@@ -11,8 +11,8 @@ public class BulletShoot : MonoBehaviour
     
     public float Bullet_forward_force;
     public float Bullet_Despawn_timer = 3.0f;
-    private bool shotFired = false;
-    public float FireDelay = 0.5f;
+    public bool shotFired = false;
+    public float FireDelay;
 
     IEnumerator waiter()    // Waits for some time before the bullet can be fired again
     {
@@ -20,8 +20,9 @@ public class BulletShoot : MonoBehaviour
         shotFired = false;
     }
 
-    void start()
+    void Start()
     {
+        FireDelay = gameObject.GetComponent<TankData>().fireRate;
         Bullet_Shooter = this.gameObject;
     }
 
@@ -32,6 +33,7 @@ public class BulletShoot : MonoBehaviour
     {
         if (shotFired == false)
         {
+            Debug.Log("Fire");
             GameObject Temporary_Bullet_Handler;
             Temporary_Bullet_Handler = Instantiate(Bullet, Bullet_Emitter.transform.position, Bullet_Emitter.transform.rotation) as GameObject;
 
@@ -45,6 +47,8 @@ public class BulletShoot : MonoBehaviour
             Destroy(Temporary_Bullet_Handler, Bullet_Despawn_timer);
 
             shotFired = true;
+
+            FireDelay = gameObject.GetComponent<TankData>().fireRate;
 
             StartCoroutine(waiter());
         }

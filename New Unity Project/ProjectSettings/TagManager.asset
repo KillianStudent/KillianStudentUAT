@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Bullet
   - Terrain
+  - PlayerSpawn
+  - EnemySpawn
   layers:
   - Default
   - TransparentFX
