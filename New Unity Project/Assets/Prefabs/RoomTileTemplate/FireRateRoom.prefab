@@ -1362,7 +1362,7 @@ MonoBehaviour:
     fireRateModifier: 0.1
     duration: 10
     isPermanent: 0
-  pickupPrefab: {fileID: 3441813102254609595, guid: dc7604690c56423479e88c491bcf224f,
+  pickupPrefab: {fileID: 3441813102254609595, guid: a53b77935d43ba3479f01e8724275a08,
     type: 3}
   spawnDelay: 5
   HasSpawned: 0

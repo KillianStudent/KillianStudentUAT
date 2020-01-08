@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1235038574327951987}
-  - component: {fileID: 8107776306645666502}
   m_Layer: 0
   m_Name: PlayerTankSpawn
   m_TagString: PlayerSpawn
@@ -31,18 +30,6 @@ Transform:
   m_Father: {fileID: 5643472319446573113}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8107776306645666502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21766418307801593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e48bdda72cca8f14b83e084cbd5a70d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4967153212743103944
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,7 +39,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4721004416345100037}
-  - component: {fileID: 4750211341303384460}
   m_Layer: 0
   m_Name: EnemyTankSpawn
   m_TagString: EnemySpawn
@@ -74,18 +60,6 @@ Transform:
   m_Father: {fileID: 5643472319446573113}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4750211341303384460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4967153212743103944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e48bdda72cca8f14b83e084cbd5a70d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5643472319446280285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,7 +1370,7 @@ MonoBehaviour:
     fireRateModifier: 0
     duration: 0
     isPermanent: 1
-  pickupPrefab: {fileID: 8207807599991277373, guid: 9ffe0f9ab3d96474ca8c9c95e72a6a07,
+  pickupPrefab: {fileID: 8207807599991277373, guid: 71837d1a88c53614daddd90de2e9463b,
     type: 3}
   spawnDelay: 5
   HasSpawned: 0

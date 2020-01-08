@@ -81,7 +81,7 @@ MonoBehaviour:
     fireRateModifier: 0
     duration: 0
     isPermanent: 0
-  pickupPrefab: {fileID: 2791706878882909278, guid: 5e0c80ddb9b46ab49874112fc0065778,
+  pickupPrefab: {fileID: 4855147800903548269, guid: 258e9133434ed99469987acbcc7f6736,
     type: 3}
   spawnDelay: 5
   HasSpawned: 0
@@ -1439,7 +1439,7 @@ MonoBehaviour:
     fireRateModifier: 0
     duration: 0
     isPermanent: 1
-  pickupPrefab: {fileID: 4855147800903548269, guid: 23cc38f9fb59a334880145fc1421f701,
+  pickupPrefab: {fileID: 2791706878882909278, guid: cbdfcd0da4139ee4bba7ef00ca73de60,
     type: 3}
   spawnDelay: 5
   HasSpawned: 0
