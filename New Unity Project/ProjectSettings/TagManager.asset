@@ -9,6 +9,8 @@ TagManager:
   - Terrain
   - PlayerSpawn
   - EnemySpawn
+  - GameManager
+  - Room
   layers:
   - Default
   - TransparentFX

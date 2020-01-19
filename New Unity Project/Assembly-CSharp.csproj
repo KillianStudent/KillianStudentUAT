@@ -60,11 +60,16 @@
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\BulletShoot.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameOver.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
+     <Compile Include="Assets\Scripts\OptionsMenu.cs" />
      <Compile Include="Assets\Scripts\Pickup.cs" />
      <Compile Include="Assets\Scripts\PickupSpawner.cs" />
      <Compile Include="Assets\Scripts\Powerup.cs" />
      <Compile Include="Assets\Scripts\PowerupController.cs" />
+     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
+     <Compile Include="Assets\Scripts\ScoreTracker.cs" />
+     <Compile Include="Assets\Scripts\SoundEffect.cs" />
      <Compile Include="Assets\Scripts\TankData.cs" />
      <Compile Include="Assets\Scripts\TankMotor.cs" />
      <None Include="Assets\Tank Personalities.txt" />
