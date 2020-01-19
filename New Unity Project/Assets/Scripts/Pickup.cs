@@ -11,6 +11,9 @@ public class Pickup : MonoBehaviour
     private float nextSpawnTime;
     private Transform tf;
     GameObject spawnedPickup;
+    public GameObject SoundEffectObject;
+    public GameManager gameManager;
+    //private float SoundEffectVolume;
 
     private bool HasSpawned;
 
@@ -19,6 +22,7 @@ public class Pickup : MonoBehaviour
     {
         tf = gameObject.GetComponent<Transform>();
         nextSpawnTime = Time.time + spawnDelay;
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -30,11 +34,8 @@ public class Pickup : MonoBehaviour
         if (powCon != null)
         {
             powCon.Add(powerup);
-            // Play feedback (TODO)
-            //if (feedback != null)
-            //{
-            //    AudioSource.PlayClipAtPoint(feedback, tf.position, 1.0f);
-            //}
+            // Play powerup sound effect ny spawning an object to play the sound
+            Instantiate(SoundEffectObject);
             //Destroy the powerup
             Destroy(gameObject);
         }

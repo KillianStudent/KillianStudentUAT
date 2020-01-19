@@ -91,6 +91,10 @@ public class AIControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Target == null)
+        {
+            Target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
         motor = gameObject.GetComponent<TankMotor>();
         data = gameObject.GetComponent<TankData>();
         tf = gameObject.GetComponent<Transform>();

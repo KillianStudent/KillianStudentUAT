@@ -20,10 +20,6 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            gameObject.GetComponent<BulletShoot>().shoot(); // shoots bullet
-        }
             switch (input)  // Movement
         {
             case InputScheme.arrowKey:
@@ -42,6 +38,48 @@ public class InputManager : MonoBehaviour
                 if (Input.GetKey(KeyCode.LeftArrow))
                 {
                     motor.Rotate(-data.rotateSpeed);
+                }
+                if (Input.GetKeyDown("space"))
+                {
+                    gameObject.GetComponent<BulletShoot>().shoot(); // shoots bullet
+                }
+                if (Input.GetKeyDown(KeyCode.H))    // self harm cheat
+                {
+                    data.Health = data.Health - 5;
+                    if (data.Health <= 0)
+                    {
+                        motor.DestroyTank();
+                    }
+                }
+                break;
+            case InputScheme.WASD:
+                if (Input.GetKey(KeyCode.W))
+                {
+                    motor.move(data.moveSpeed);
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    motor.move(-data.reverseSpeed);
+                }
+                if (Input.GetKey(KeyCode.D))   // Rotation
+                {
+                    motor.Rotate(data.rotateSpeed);
+                }
+                if (Input.GetKey(KeyCode.A))
+                {
+                    motor.Rotate(-data.rotateSpeed);
+                }
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    gameObject.GetComponent<BulletShoot>().shoot(); // shoots bullet
+                }
+                if (Input.GetKeyDown(KeyCode.G))    // self harm cheat
+                {
+                    data.Health = data.Health - 5;
+                    if (data.Health <= 0)
+                    {
+                        motor.DestroyTank();
+                    }
                 }
                 break;
         }
